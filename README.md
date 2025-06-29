@@ -14,6 +14,8 @@ TreasureOS is a minimal monolithic kernel written in Rust, targeting 32‑bit x8
 
 This README covers how to build, package, and run TreasureOS under QEMU.
 
+prep_and_run.sh should set everything up appropriately for the first test run upon a new download. 
+
 ---
 
 ## Prerequisites
