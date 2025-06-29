@@ -1,0 +1,20 @@
+[package]
+name = "treasureos"
+version = "0.1.0"
+edition = "2021"
+authors = ["Chase Bryan <you@example.com>"]
+description = "TreasureOS kernel (no_std)"
+license = "GPL3"
+
+[dependencies]
+x86 = "0.52.0"
+
+[profile.dev]
+opt-level = 3
+
+debug = false
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1

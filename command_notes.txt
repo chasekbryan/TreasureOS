@@ -1,0 +1,16 @@
+cargo clean
+cargo build --release --target i686-unknown-none.json
+rm -rf isofs treasureos.iso
+mkdir -p isofs/boot/grub
+cp target/i686-unknown-none/release/treasureos isofs/boot/treasureos.bin
+cat > isofs/boot/grub/grub.cfg <<EOF
+set timeout=0
+set default=0
+
+menuentry "TreasureOS v0.1" {
+    multiboot /boot/treasureos.bin
+    boot
+}
+EOF
+i686-elf-grub-mkrescue -o treasureos.iso isofs
+qemu-system-i386 -cdrom treasureos.iso -serial stdio
