@@ -2,7 +2,7 @@
 name = "treasureos"
 version = "0.1.0"
 edition = "2021"
-authors = ["Chase Bryan <you@example.com>"]
+authors = ["Chase Bryan"]
 description = "TreasureOS kernel (no_std)"
 license = "GPL3"
 
